@@ -15,3 +15,7 @@ The building starts to develop its “own intelligence”, characterised not by 
 Our project is based in sensors that provide information about temperature, humidity, light, and others cases. The information from each sensor is given to the broker and its passed to the other points of the system. The database will store the information coming from the broker and the dashboard will consume it in real time, to provide information to the user in graph's form. The dashboard can communicate with the database in order to get information about the sensor's history. There are alerts on the dashboard that will appear if any value is above/below a certain threshold.
 
 Our components are created by a docker compose in order to establish the network layer links between the containers. Then, all our components are automatic deployed by Jenkins after the tests are passed.
+
+
+
+For more information: https://xcoa.av.it.pt/~es2016-2017_g202/
