@@ -1,0 +1,381 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2 - SPECIFICATION &mdash; Domotic 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Domotic 0 documentation" href="index.html"/>
+        <link rel="next" title="Software Requirements &amp; Specification" href="req.html"/>
+        <link rel="prev" title="1 - USER MANUAL" href="1-user.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Domotic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0-client.html">0-CLIENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-user.html">1 - USER MANUAL</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2 - SPECIFICATION</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#features-system-scenarios-and-processes">2.1 Features, system scenarios and processes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#features">2.1.1 Features</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#actors-use-cases-stories">2.1.2 Actors / use cases / stories</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#requirements-and-tests">2.2 Requirements and tests</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="req.html">Software Requirements &amp; Specification</a></li>
+<li class="toctree-l3"><a class="reference internal" href="use.html">Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture-components">2.3 Architecture: Components</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#features-functionality">2.3.1 Features / functionality</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#interfaces-connections">2.3.2 Interfaces / connections</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3-dev.html">3- DEVELOPMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-team.html">4 - TEAM</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Domotic</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>2 - SPECIFICATION</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/2-specs.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="specification">
+<h1>2 - SPECIFICATION<a class="headerlink" href="#specification" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="features-system-scenarios-and-processes">
+<h2>2.1 Features, system scenarios and processes<a class="headerlink" href="#features-system-scenarios-and-processes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="features">
+<h3>2.1.1 Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>FE-1: Show every data from the sensors in a temporal scale</li>
+<li>FE-2: Search in house history</li>
+<li>FE-3: Send alerts when the values are above/below the threshold</li>
+<li>FE-4: Adding sensors from api (REST)</li>
+<li>FE-5: Monitoring the sistem</li>
+</ul>
+</div>
+<div class="section" id="actors-use-cases-stories">
+<h3>2.1.2 Actors / use cases / stories<a class="headerlink" href="#actors-use-cases-stories" title="Permalink to this headline">¶</a></h3>
+<p><strong>Actors</strong></p>
+<ul class="simple">
+<li>Users: A person who uses the dashboard and the system</li>
+<li>Admin of system : The person who is responsable for the system and the availability of the services</li>
+</ul>
+<p><strong>Use cases</strong></p>
+<ul class="simple">
+<li>UC-1: Visualize data and alerts in the dashboard</li>
+<li>UC-2: Visualize data from the database on the dashboard</li>
+<li>UC-3: Visualize logs from all the infrastructures</li>
+<li>UC-4: Change threshould of alarms</li>
+<li>UC-5: Send information directly to the gateway</li>
+</ul>
+<div class="figure" id="id1">
+<img alt="_images/use_cases.png" src="_images/use_cases.png" />
+<p class="caption"><span class="caption-text">Figure: Use cases</span></p>
+</div>
+<p><strong>User Stories</strong></p>
+<ul class="simple">
+<li>US-1: As a user I want to access the dashboard so I can see real time information.</li>
+<li>US-2: As a user I want to navigate in the dashboard to analize historic information.</li>
+<li>US-3: As a user I want to change time scale in my dashboard so I can easily see what I want.</li>
+<li>US-4: As a administrator I want to change the temperature alarm threashould to trigger the alert at desire value.</li>
+<li>US-5: As a user I want to be alerted if alarm event is triggered so I can do something.</li>
+<li>US-6: As a user I want to access historic data even offline so I can analize historic data.</li>
+<li>US-7: As a administrator I want to have full access to data and logs so I can monitorize the system.</li>
+</ul>
+</div>
+</div>
+<div class="section" id="requirements-and-tests">
+<h2>2.2 Requirements and tests<a class="headerlink" href="#requirements-and-tests" title="Permalink to this headline">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="req.html">Software Requirements &amp; Specification</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="req.html#business-requirements">Business requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="req.html#user-requirements">User requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="req.html#functional-requirements">Functional requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="req.html#external-interface-requirements">External interface requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="req.html#data-requirements">Data requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="req.html#solution-ideas">Solution ideas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="req.html#user-interface">User interface</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="use.html">Tests</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="use.html#junit-tests">JUnit Tests</a></li>
+<li class="toctree-l2"><a class="reference internal" href="use.html#bdd-tests">BDD Tests</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="section" id="architecture-components">
+<h2>2.3 Architecture: Components<a class="headerlink" href="#architecture-components" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id2">
+<img alt="_images/general.png" src="_images/general.png" />
+<p class="caption"><span class="caption-text">Figure 2: Solution architecture with main modules</span></p>
+</div>
+<ol class="arabic simple">
+<li>Controllers: Simulation of sensors</li>
+<li>Gateway: REST API</li>
+<li>System Monitoring: ELK stack to show all logs and infos of each part of the system</li>
+<li>DB : Database to make data persistence</li>
+<li>Dashboard: Website to show all data from sensors (past and real time)</li>
+<li>Event Detector and Processing Units: Modules that processes data</li>
+<li>BUS : Message Broker</li>
+</ol>
+<div class="section" id="features-functionality">
+<h3>2.3.1 Features / functionality<a class="headerlink" href="#features-functionality" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="interfaces-connections">
+<h3>2.3.2 Interfaces / connections<a class="headerlink" href="#interfaces-connections" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="33%" />
+<col width="16%" />
+<col width="29%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Component</th>
+<th class="head">Interfaces</th>
+<th class="head">Port</th>
+<th class="head">Data format</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>2</td>
+<td>tomcat endpoint</td>
+<td>12214</td>
+<td>JSON</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>postgres</td>
+<td>5432</td>
+<td>JPA</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>websocket</td>
+<td>8080</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>7</td>
+<td>rabbit mq</td>
+<td>5672</td>
+<td>message(json)</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="req.html" class="btn btn-neutral float-right" title="Software Requirements &amp; Specification" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="1-user.html" class="btn btn-neutral" title="1 - USER MANUAL" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, P4-G2.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

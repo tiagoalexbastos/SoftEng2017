@@ -1,0 +1,19 @@
+[
+  {
+    "_id": "51534c10-520f-11e7-8f8d-95665eef113e",
+    "_type": "dashboard",
+    "_source": {
+      "title": "MyDashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"80c2b300-520f-11e7-8f8d-95665eef113e\",\"panelIndex\":1,\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"},{\"col\":7,\"id\":\"acf7fd90-520f-11e7-8f8d-95665eef113e\",\"panelIndex\":2,\"row\":1,\"size_x\":6,\"size_y\":3,\"type\":\"visualization\"}]",
+      "optionsJSON": "{\"darkTheme\":true}",
+      "uiStateJSON": "{}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}],\"highlightAll\":true,\"version\":true}"
+      }
+    }
+  }
+]

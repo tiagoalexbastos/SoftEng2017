@@ -1,0 +1,284 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Solution and Technologies &mdash; Domotic 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Domotic 0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Domotic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="0-client.html">0-CLIENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-user.html">1 - USER MANUAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-specs.html">2 - SPECIFICATION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-dev.html">3- DEVELOPMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-team.html">4 - TEAM</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Domotic</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Solution and Technologies</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/technologies.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="solution-and-technologies">
+<h1>Solution and Technologies<a class="headerlink" href="#solution-and-technologies" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id1">
+<img alt="_images/general.png" src="_images/general.png" />
+<p class="caption"><span class="caption-text">Figure 2: Solution architecture with main modules</span></p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="domoticz.html">Deploy project with Docker</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="domoticz.html#docker-compose">Docker Compose</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jenkins.html">Jenkins</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jenkins.html#deploy-steps">Deploy Steps</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rabbitmq.html">Enterprise Bus: Rabbit MQ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rabbitmq.html#topics">Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pu.html">Processing Units &amp; Event Detectors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pu.html#alarm1">Alarm1</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="data.html">Data &amp; Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="data.html#data-format">Data format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#sensors">Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#data">Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="data.html#simulation">Simulation</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="rest.html">Gateway: REST</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="rest.html#format">Format</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="elk.html">System monitoring : ELK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="elk.html#ports">Ports</a></li>
+<li class="toctree-l2"><a class="reference internal" href="elk.html#kibana-website">kibana website</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="persistence.html">Persistence : JPA / PostgreSQL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="persistence.html#table">Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="persistence.html#queries">Queries</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="jsf.html">Dashboard : JSF</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="jsf.html#dashboard">Dashboard</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, P4-G2.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

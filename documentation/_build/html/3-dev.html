@@ -1,0 +1,377 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3- DEVELOPMENT &mdash; Domotic 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Domotic 0 documentation" href="index.html"/>
+        <link rel="next" title="4 - TEAM" href="4-team.html"/>
+        <link rel="prev" title="Tests" href="use.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Domotic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0-client.html">0-CLIENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-user.html">1 - USER MANUAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-specs.html">2 - SPECIFICATION</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3- DEVELOPMENT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#arquitecture">Arquitecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#data-model">Data Model</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#sensor-s-values">Sensor&#8217;s values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#deployment">Deployment</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="4-team.html">4 - TEAM</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Domotic</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>3- DEVELOPMENT</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/3-dev.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="development">
+<h1>3- DEVELOPMENT<a class="headerlink" href="#development" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="arquitecture">
+<h2>Arquitecture<a class="headerlink" href="#arquitecture" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>Frontend</dt>
+<dd><ul class="first last">
+<li>Done in JSF with PrimeFaces.</li>
+<li>Contains 4 dashboards with informations related to 4 sensors.</li>
+<li>It&#8217;s possible to verify the history of valores that have been saved, by requesting them to the DB.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>DB</dt>
+<dd><ul class="first last">
+<li>The database is done in JPA and receives all the values read by the sensors.</li>
+<li>This values are saved and can be sent to the Dashboard by websockets.</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>DataCollector</dt>
+<dd><ul class="first last">
+<li>It represents the data received from the different sensors through the RabbitMQ.</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<ol class="arabic simple">
+<li>Architecture of the system.</li>
+</ol>
+<div class="figure" id="id1">
+<img alt="_images/architecture.png" src="_images/architecture.png" />
+<p class="caption"><span class="caption-text">Figure: Architecture of the system</span></p>
+</div>
+</div>
+<div class="section" id="data-model">
+<h2>Data Model<a class="headerlink" href="#data-model" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>External Events</dt>
+<dd><ul class="first last">
+<li>Sensors send the data to a RabbitMQ broker</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>External Events for Datacollector</dt>
+<dd><ul class="first last">
+<li>Data arrives from RabbitMQ</li>
+<li>Forward it with specific messages to dashboard</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="first docutils">
+<dt>External Events for Dashboard</dt>
+<dd><ul class="first last">
+<li>Data arrives from datacollector</li>
+<li>Process it</li>
+<li>Send it to dashboard</li>
+<li>Check for values above threshold</li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+<div class="section" id="sensor-s-values">
+<h3>Sensor&#8217;s values<a class="headerlink" href="#sensor-s-values" title="Permalink to this headline">¶</a></h3>
+<table border="1" class="docutils">
+<colgroup>
+<col width="25%" />
+<col width="56%" />
+<col width="19%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Number</th>
+<th class="head">Name</th>
+<th class="head">Type</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>Temperatura dos Narcisos</td>
+<td>ºC</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>Humidade da Cave</td>
+<td>%</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>Luminosidade da Estufa</td>
+<td>lux</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>Sensor de Fumo</td>
+<td>ppm</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="deployment">
+<h2>Deployment<a class="headerlink" href="#deployment" title="Permalink to this headline">¶</a></h2>
+<p>The deployment is processed by Jenkins. It is autonomous and it develops all the containers and puts them online.
+Our project contains the following containers:</p>
+<ul class="simple">
+<li><dl class="first docutils">
+<dt>ELK</dt>
+<dd><ul class="first last">
+<li>ElasticSearch</li>
+<li>Logstash</li>
+<li>Kibana</li>
+</ul>
+</dd>
+</dl>
+</li>
+<li>POSTGRES DB</li>
+<li>RabbitMQ</li>
+<li>JSF Dashboard</li>
+<li>Tomcat for the gateway</li>
+<li>JPA</li>
+<li>Processing Unit python</li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="4-team.html" class="btn btn-neutral float-right" title="4 - TEAM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="use.html" class="btn btn-neutral" title="Tests" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, P4-G2.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,325 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Software Requirements &amp; Specification &mdash; Domotic 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Domotic 0 documentation" href="index.html"/>
+        <link rel="up" title="2 - SPECIFICATION" href="2-specs.html"/>
+        <link rel="next" title="Tests" href="use.html"/>
+        <link rel="prev" title="2 - SPECIFICATION" href="2-specs.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Domotic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0-client.html">0-CLIENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-user.html">1 - USER MANUAL</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="2-specs.html">2 - SPECIFICATION</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="2-specs.html#features-system-scenarios-and-processes">2.1 Features, system scenarios and processes</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="2-specs.html#requirements-and-tests">2.2 Requirements and tests</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Software Requirements &amp; Specification</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#business-requirements">Business requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-requirements">User requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#functional-requirements">Functional requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#external-interface-requirements">External interface requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#data-requirements">Data requirements</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#solution-ideas">Solution ideas</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#user-interface">User interface</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="use.html">Tests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="2-specs.html#architecture-components">2.3 Architecture: Components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3-dev.html">3- DEVELOPMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-team.html">4 - TEAM</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Domotic</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="2-specs.html">2 - SPECIFICATION</a> &raquo;</li>
+        
+      <li>Software Requirements &amp; Specification</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/req.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="software-requirements-specification">
+<h1>Software Requirements &amp; Specification<a class="headerlink" href="#software-requirements-specification" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="business-requirements">
+<h2>Business requirements<a class="headerlink" href="#business-requirements" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>BR-1: Prevents temperature from going up by alert the user.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="user-requirements">
+<h2>User requirements<a class="headerlink" href="#user-requirements" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>UR-1: Monitorize in real time all wanted aspects at home.</li>
+<li>UR-2: Acess historic information.</li>
+<li>UR-3: Alert to something that is not supose to be happening e.g. temperature higher than 30ªC.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="functional-requirements">
+<h2>Functional requirements<a class="headerlink" href="#functional-requirements" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>FR-1: When a trigger situation event happens an alert must be send.</li>
+<li>FR-2: The user must be able to change the trigger events (temperature, doors that could be open).</li>
+<li>FR-3: The information must be processed and displayed in a two seconds time window.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="external-interface-requirements">
+<h2>External interface requirements<a class="headerlink" href="#external-interface-requirements" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>ER-1: A internet connection is needed to plug sensors.</li>
+<li>ER-2: The users need a browser with internet connection to dashboard access.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="data-requirements">
+<h2>Data requirements<a class="headerlink" href="#data-requirements" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>DR-1: A Json format is needed like the following one {‘type’: ‘DOOR’ ,’room’: ‘kitchen’ ,’name’:’refrigerator’ , ‘timestamp’: 1337518334 , ‘value’ : 0 }.</li>
+<li>DR-2: In Json packet the fields: type, room, name, timestamp and value are mandatory.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="solution-ideas">
+<h2>Solution ideas<a class="headerlink" href="#solution-ideas" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>SI-1: The user should be able to search information in historic data.</li>
+<li>SI-2: In case of trigger event the dashboard must display a warning alert.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="user-interface">
+<h2>User interface<a class="headerlink" href="#user-interface" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><ul class="simple">
+<li>UI-1: The time scale interaction must be intuitive.</li>
+<li>UI-2: Users should easily switch between real time and historic data.</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="use.html" class="btn btn-neutral float-right" title="Tests" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="2-specs.html" class="btn btn-neutral" title="2 - SPECIFICATION" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, P4-G2.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+version: '2'
+services:
+
+  #############
+  #    ELK    #
+  #############
+  elasticsearch:
+    hostname: elasticsearch
+    image: elasticsearch:alpine
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+    volumes:
+      - ./ELK/elasticsearch/volumes/esdata/:/opt/elasticsearch/data
+      - ./ELK/elasticsearch/assets/elasticsearch.yml:/opt/elasticsearch/config/elasticsearch.yml
+    mem_limit: 1g
+
+  logstash:
+    hostname: logstash
+    image: logstash:alpine 
+    ports:
+      - "9600:9600" #web Api
+      - "5000:5000" #tcp
+    command: -f /etc/logstash.conf 
+    volumes:
+      - ./ELK/logstash/assets/logstash.conf:/etc/logstash.conf
+    links:
+      - elasticsearch
+
+  kibana:
+    hostname: kibana
+    image: kibana
+    links:
+      - elasticsearch
+    ports:
+      - "5601:5601"
+
+  #############
+  #    DB     #
+  #############
+  db:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=postgres
+    ports:
+      - "5432:5432"
+    logging:
+      driver: "syslog"
+      options:
+        syslog-address: "udp://$localhost:5000"
+        tag: "postgres"
+  #############
+  #  Brocker  #
+  #############
+  rabbit:
+    image: rabbitmq
+    ports:
+      - "5672:5672"
+
+
+  ###############
+  #  dashboard  #
+  ###############
+  dashboard:
+    image: tomcat
+    volumes:
+      - ./dashboard:/usr/local/tomcat/webapps
+
+    ports:
+      - "12215:8080"
+
+    links:
+      - "logstash:logstash"
+      - "rabbit:systembus"
+  
+  ###############
+  #   Gateway   #
+  ###############
+  tomcat:
+    image: tomcat
+    ports:
+      - "12214:8080"
+    volumes:
+      - ./SensorGateway:/usr/local/tomcat/webapps
+
+    links:
+      - "rabbit:systembus"
+
+  ###########
+  #   JPA   #
+  ###########
+  jpa:
+    image: anapsix/alpine-java
+    volumes:
+      - ./DB_JPA/src/main/resources/log4j.properties:/log4j.properties #copy log4j properties
+      - ./DB_JPA/target/DB_JPA-1.0-SNAPSHOT-jar-with-dependencies.jar:/DB_JPA-1.0-SNAPSHOT-jar-with-dependencies.jar
+    command: java -jar -Dlog4j.configuration=file:"/log4j.properties" /DB_JPA-1.0-SNAPSHOT-jar-with-dependencies.jar 
+    links:
+      - "rabbit:systembus"
+      - "db:db_postgres"
+      - "logstash:logstash"
+
+
+  ##################
+  #   Proc_Units   #
+  ##################
+  p1:
+    build: ./Pinuts/
+    command: python /usr/src/app/alarm.py
+    links:
+      - "rabbit:systembus"

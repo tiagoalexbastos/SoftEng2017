@@ -1,0 +1,4 @@
+feature\connection\ConnectionSteps.class
+feature\connection\ConnectionTest.class
+feature\getting\ReadingGettingSteps.class
+feature\getting\ReadingGettingTest.class

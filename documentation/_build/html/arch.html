@@ -1,0 +1,279 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Project Requirements &mdash; Domotic 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Domotic 0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Domotic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="0-client.html">0-CLIENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-user.html">1 - USER MANUAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-specs.html">2 - SPECIFICATION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-dev.html">3- DEVELOPMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-team.html">4 - TEAM</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Domotic</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Project Requirements</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/arch.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="project-requirements">
+<h1>Project Requirements<a class="headerlink" href="#project-requirements" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="reference-architecture">
+<h2>Reference architecture<a class="headerlink" href="#reference-architecture" title="Permalink to this headline">¶</a></h2>
+<img alt="_images/architecture.png" src="_images/architecture.png" />
+<ol class="arabic simple">
+<li>Sensor : data is being acquired along time</li>
+<li>DataCollector: store the information, Relay the information of processing components &amp; Manage the basic access to the data in the system</li>
+<li>Dashboard: system can support online mode to allow online monitoring of sensor</li>
+<li>EventDetector: processing namely to identify relevant events</li>
+<li>DataProcessor (online) : provide data transformation</li>
+<li>DataReview : support offline scenarios where it is possible to review information in the system</li>
+<li>Dataprocessor : support offline scenarios where it is possible to process information in the system</li>
+</ol>
+<p>In the offline scenario, system should support strategies to handle big sets of data and asynchronous processing.</p>
+</div>
+<div class="section" id="basic-architecture-requirements">
+<h2>Basic architecture requirements<a class="headerlink" href="#basic-architecture-requirements" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="enterprise-bus">
+<h3>Enterprise Bus<a class="headerlink" href="#enterprise-bus" title="Permalink to this headline">¶</a></h3>
+<p>The system should be decoupled using a Enterprise Bus. The project must use a Enterprise bus (EB) supported on messaging / streaming. The selection of broker main depend on the project.
+The objective is to decouple the internal components so that they can be scaled, upgraded and migrated in a transparent manner.</p>
+</div>
+<div class="section" id="gateway">
+<h3>Gateway<a class="headerlink" href="#gateway" title="Permalink to this headline">¶</a></h3>
+<p>The system must have a REST based gateway to access the EB from outside ( e.g. external sensor inputs ). It should provide based access control.
+The objective is to provide isolation (protocol adaptation, hide details, access control, …) between the internal domain and the outside world.</p>
+</div>
+<div class="section" id="processing-units">
+<h3>Processing units<a class="headerlink" href="#processing-units" title="Permalink to this headline">¶</a></h3>
+<p>Every projects must contain a external application - i.e. not sharing system servers - that uses the EB .  Can be a python, java application
+The objective is to have pluggable processing units that provide specific functions over the data that is on the EB.</p>
+</div>
+<div class="section" id="dashboard">
+<h3>Dashboard<a class="headerlink" href="#dashboard" title="Permalink to this headline">¶</a></h3>
+<p>The system must have a dashboard supported on Java Server Faces. Naturally it should be adapted to the specificities of the project.
+The objective is to provide both past and real time information regarding the product being developed.</p>
+</div>
+<div class="section" id="persistence">
+<h3>Persistence<a class="headerlink" href="#persistence" title="Permalink to this headline">¶</a></h3>
+<p>No specific requirement on the persistence solution although JPA is a natural option.  In some projects, like domotics , a persistence solution is mandatory to ensure that the system preserves a coherent state regardless of performance of the system (e.g.  to recover after a system failure or just validate operation - turn on something that is already turned on… )
+The objective is to abstract the effective storage driver, while providing data persistence.</p>
+</div>
+</div>
+<div class="section" id="constrains">
+<h2>Constrains<a class="headerlink" href="#constrains" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="cqrs-solution">
+<h3>CQRS solution<a class="headerlink" href="#cqrs-solution" title="Permalink to this headline">¶</a></h3>
+<p>Command Query Responsibility Segregation</p>
+<img alt="_images/cqrs.png" src="_images/cqrs.png" />
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, P4-G2.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

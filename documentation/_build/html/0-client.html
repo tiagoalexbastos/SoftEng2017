@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>0-CLIENT &mdash; Domotic 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Domotic 0 documentation" href="index.html"/>
+        <link rel="next" title="1 - USER MANUAL" href="1-user.html"/>
+        <link rel="prev" title="Software Engeneering: “The Domotics scenario”" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Domotic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">0-CLIENT</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#context">Context</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#objective">Objective</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#specifications">Specifications</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#important-features">Important Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#possible-risks-and-challenges">Possible risks and challenges</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#technical-requirements">Technical requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#architecture">Architecture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#components">Components</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="1-user.html">1 - USER MANUAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-specs.html">2 - SPECIFICATION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-dev.html">3- DEVELOPMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-team.html">4 - TEAM</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Domotic</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>0-CLIENT</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/0-client.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="client">
+<h1>0-CLIENT<a class="headerlink" href="#client" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="context">
+<h2>Context<a class="headerlink" href="#context" title="Permalink to this headline">¶</a></h2>
+<p>In a world of technology the domotic area is growing up tendency, Domotic is a project made by a team of Computer &amp; Telematics Engineering students in response to the challenge made by the subject of Software engineering.</p>
+</div>
+<div class="section" id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Permalink to this headline">¶</a></h2>
+<p>The system we implemented offers a way to visualize data gathered by sensors on web browsers referring to a real time monitorization of a house, sending warnings when extreme conditions occur, we can also show some historical data that is stored in our system.</p>
+</div>
+<div class="section" id="specifications">
+<h2>Specifications<a class="headerlink" href="#specifications" title="Permalink to this headline">¶</a></h2>
+<p>The conditions observable in our system are temperature, humidity, luminosity and smoke levels.
+The data obtained is the product of a simulation of data that would come from actual sensors on a house.</p>
+</div>
+<div class="section" id="important-features">
+<h2>Important Features<a class="headerlink" href="#important-features" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Data Storage: Collector of the data of all sensors that will forward it to the dashboard and database.</li>
+<li>Dashboard: A Dashboard displaying info about the sensors and what is going on, can also show historical data.</li>
+<li>System Alerts: Specific alerts when the data goes above or under the threshold or other kind of alerts.</li>
+</ol>
+</div>
+<div class="section" id="possible-risks-and-challenges">
+<h2>Possible risks and challenges<a class="headerlink" href="#possible-risks-and-challenges" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Sensors not working correctly</li>
+<li>Data values not corresponding to real values</li>
+</ol>
+</div>
+<div class="section" id="technical-requirements">
+<h2>Technical requirements<a class="headerlink" href="#technical-requirements" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Data sensors to collect data from the house.</li>
+<li>Network access and a web browser.</li>
+</ol>
+</div>
+<div class="section" id="architecture">
+<h2>Architecture<a class="headerlink" href="#architecture" title="Permalink to this headline">¶</a></h2>
+<div class="figure" id="id1">
+<img alt="_images/arch_client.png" src="_images/arch_client.png" />
+<p class="caption"><span class="caption-text">Figure: Architecture</span></p>
+</div>
+</div>
+<div class="section" id="components">
+<h2>Components<a class="headerlink" href="#components" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>Sensor Simulation: Value generation for the simulation of real data.</li>
+<li>RabbitMQ: message broker used intermediate between data sent from sensors and the server.</li>
+<li>Server: Where we consume the data from the RabbitMQ queues, process it, store it in a database and send it to the dashboard.</li>
+<li>Tomcat: Java web Server where our dashboard is deployed.</li>
+<li>Cucumber: Testing software tool used by computer programmers for testing other software. It runs automated acceptance tests written in a behavior-driven development style. Central to the Cucumber BDD approach is its plain language parser called Gherkin.</li>
+<li>Jenkins: helps to automate the software development process with continuous integration.</li>
+<li>Maven: software project management and comprehension tool</li>
+<li>ELK Stack -The ELK stack consists of Elasticsearch, Logstash, and Kibana (System Monitoring).</li>
+<li>Database: PostgreSQL database</li>
+<li>Dashboard: Where the data and warnings are displayed</li>
+<li>Alarms: Python Scripts parsing the data looking for values above/under the threshold.</li>
+</ol>
+<p>Everything is running in docker so it’s easy to people reproduce it.Using Docker we can eliminate “it works on my machine” problems when collaborating on code with co-workers.</p>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="1-user.html" class="btn btn-neutral float-right" title="1 - USER MANUAL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="Software Engeneering: “The Domotics scenario”" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, P4-G2.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

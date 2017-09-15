@@ -1,0 +1,125 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <p:socket onMessage="handleMessage" channel="/channel" />
+    <script type="text/javascript">
+        function handleMessage(data) {
+            msg = JSON.parse(data);
+            data = msg['data'];
+            if (msg.hasOwnProperty('type')) {
+                toastr.error(msg['message'], msg['title']);
+                return;
+            }
+            
+            
+            console.log(data);
+            //$(".buton_ref").first().trigger("click");
+            
+            /*var index=$("#container").data('highchartsChart');
+            var chart=Highcharts.charts[index];
+            */
+           
+            var x = (new Date()).getTime(); // current time
+            //var y = Math.random();
+            toastr.options = {"positionClass": "toast-bottom-right"}
+            var y = Number(data);
+            
+            if (msg.hasOwnProperty('name')) {
+                if (msg['name'] == "Temperatura dos Narcisos") {
+                    var ch = Highcharts.charts[0];
+                    ch.series[0].addPoint([x, y], true, true);
+                    return;
+                }
+                else if (msg['name'] == "Humidade da Cave") {
+                    var ch = Highcharts.charts[1];
+                    ch.series[0].addPoint([x, y], true, true);
+                    return;
+                } else if (msg['name'] == "Luminosidade da Estufa") {
+                    var ch = Highcharts.charts[2];
+                    ch.series[0].addPoint([x, y], true, true);
+                    return;
+                } else if (msg['name'] == "Sensor de Fumo") {
+                    var ch = Highcharts.charts[3];
+                    ch.series[0].addPoint([x, y], true, true);
+                    return;
+                }
+            }
+            
+            
+            
+            var ch2 = Highcharts.charts[1];
+            ch2.series[0].addPoint([x, y], true, true);
+            
+            var ch3 = Highcharts.charts[2];
+            ch3.series[0].addPoint([x, y], true, true);
+            
+            var ch4 = Highcharts.charts[3];
+            ch4.series[0].addPoint([x, y], true, true);
+            
+            
+            //if(y > 10) toastr.error('Value for this sensor is high!', 'Alert!')
+
+
+            //series[0].addPoint([x, y], true, true);
+            
+            //chart.series.addPoint([x, y], true, true);
+              
+        }
+    </script>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-1 col-md-2 sidebar" style="max-width: 250px">
+                <ui:include src="leftMenu.xhtml" />
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">                    
+                <ui:insert name="content" />                    
+            </div>
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">                    
+              <!--  <h:form>
+                    <p:dataTable var="reading" id="table1" value="#{connect.readings}">
+                        <p:column headerText="Timestamp (millis)">
+                            <h:outputText value="#{reading.timestamp}" />
+                        </p:column>
+                        
+                        <p:column headerText="Room">
+                            <h:outputText value="#{reading.room}" />
+                        </p:column>
+                      
+                        <p:column headerText="Name">
+                            <h:outputText value="#{reading.name}" />
+                        </p:column>
+
+                        <p:column headerText="Data">
+                            <h:outputText value="#{reading.data}" />
+                        </p:column>
+                        
+                    </p:dataTable>
+                    <p:commandButton value="xpto" style="display: none;" class="buton_ref" update="table1" >
+                        
+                    </p:commandButton>
+                </h:form> -->
+                
+                
+                
+                <h:form>
+                    <h:commandLink id="umagrandepica" value="#{connect.doesNothing()}" class="qualquer" action="#{connect.dumper()}">
+                        <f:ajax execute="@form" render="@none"/>
+                    </h:commandLink>
+                    
+                </h:form>
+                
+               
+                
+                
+            </div>          
+        </div>
+    </div>
+    
+  
+    
+    
+</ui:composition>
+

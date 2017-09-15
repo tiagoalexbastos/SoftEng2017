@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Data &amp; Controllers &mdash; Domotic 0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="author" title="About these documents"
+              href="about.html"/>
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="Domotic 0 documentation" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Domotic
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="0-client.html">0-CLIENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1-user.html">1 - USER MANUAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2-specs.html">2 - SPECIFICATION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3-dev.html">3- DEVELOPMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4-team.html">4 - TEAM</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Domotic</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Data &amp; Controllers</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/data.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="data-controllers">
+<h1>Data &amp; Controllers<a class="headerlink" href="#data-controllers" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="data-format">
+<h2>Data format<a class="headerlink" href="#data-format" title="Permalink to this headline">¶</a></h2>
+<p>Json format</p>
+<ul class="simple">
+<li>DOOR   : {&#8216;type&#8217;: &#8216;DOOR&#8217; ,&#8217;room&#8217;: &#8216;kitchen&#8217; ,&#8217;name&#8217;:&#8217;refrigerator&#8217; , &#8216;timestamp&#8217;: 1337518334 , &#8216;value&#8217; : 0 }</li>
+<li>LIGHTS : {&#8216;type&#8217;: &#8216;LIGHTS&#8217; ,&#8217;room&#8217;: &#8216;kitchen&#8217; ,&#8217;name&#8217;: &#8216;sink&#8217; , &#8216;timestamp&#8217;: 1337518334 , &#8216;value&#8217; : simul_val }</li>
+<li>ENV    : {&#8216;type&#8217;: &#8216;ENV&#8217;, &#8216;timestamp&#8217;: 1337518334 , &#8216;insideTemp&#8217; : 10.0 , &#8216;outsideTemp&#8217; : 10.0 ,&#8217;insideHumidity&#8217;: 10.0 , &#8216;outsideHumidity&#8217;: 10.0, &#8216;windSpeed&#8217; : 10.0 , &#8216;rain&#8217;: 10.0 }</li>
+<li>MOTION : {&#8216;type&#8217;: &#8216;MOTION&#8217; ,&#8217;room&#8217;: &#8216;kitchen&#8217; ,&#8217;name&#8217;:&#8217;corner&#8217; , &#8216;timestamp&#8217;: 1337518334 , &#8216;value&#8217; : 0 }</li>
+<li>POWER  : {&#8216;type&#8217;: &#8216;POWER&#8217; ,&#8217;room&#8217;:&#8217;kitchen&#8217;,&#8217;name&#8217;: &#8216;lights&#8217; , &#8216;timestamp&#8217;: 1337518334 , &#8216;PowerWatts&#8217; : 0.0 , &#8216;ApparentPowerVAs&#8217;: 0.0 }</li>
+</ul>
+</div>
+<div class="section" id="sensors">
+<h2>Sensors<a class="headerlink" href="#sensors" title="Permalink to this headline">¶</a></h2>
+<p>Possible to have multiple sensors.</p>
+<p>Our dashboard has 4 simulated sensors: (2 temperature, 2 humidity)</p>
+</div>
+<div class="section" id="data">
+<h2>Data<a class="headerlink" href="#data" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="type">
+<h3>Type<a class="headerlink" href="#type" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>DOOR (open/close)</li>
+<li>LIGHTS (lights on/off)</li>
+<li>ENV</li>
+<li>MOTION (detected/non detected)</li>
+<li>POWER</li>
+</ul>
+</div>
+<div class="section" id="actuators-all-lights">
+<h3>Actuators (all LIGHTS)<a class="headerlink" href="#actuators-all-lights" title="Permalink to this headline">¶</a></h3>
+<p>[&#8216;bedroom:lights&#8217;, &#8216;master:lights&#8217; , &#8216;livingroom:dininglights&#8217; , &#8216;livingroom:firelights&#8217; , &#8216;livingroom:lights1&#8217; ,
+&#8216;guestbath:fan&#8217;,&#8217;guestbath:overheadlight&#8217; , &#8216;guestbath:sinklight&#8217; ,
+&#8216;masterbath:sinklight&#8217; , &#8216;masterbath:overheadlight&#8217; , &#8216;masterbath:fan&#8217;,
+&#8216;kitchen:lights&#8217; , &#8216;kitchen:sink&#8217;]</p>
+</div>
+<div class="section" id="data-set">
+<h3>Data Set<a class="headerlink" href="#data-set" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>door : DoorSensorName , TimestampUTC , OpenOrClosed</li>
+<li>motion: MotionSensorName , TimestampUTC , MotionOrNoMotion</li>
+<li>enviro: TimestampUTC , insideTemp , outsideTemp , insideHumidity , outsideHumidity , windSpeed, windDirectionDegrees , windGust , windGustDirectionDegrees , rainRate , rain , windChill , heatindex</li>
+<li>switch : SwitchName , TimestampUTC , MaxRealPowerWatts , DimProportion , CircuitNumber (Current real power can be closely approximated by MaxRealPowerWatts * DimProportion.)</li>
+<li>circuit : CircuitName , CircuitNumber , TimestampUTC , RealPowerWatts , ApparentPowerVAs</li>
+</ul>
+<p>more info in: <a class="reference external" href="http://traces.cs.umass.edu/index.php/Smart/Smart">http://traces.cs.umass.edu/index.php/Smart/Smart</a></p>
+</div>
+</div>
+<div class="section" id="simulation">
+<h2>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h2>
+<p>Simulation of the controllers and sensors/actuators.</p>
+<ol class="arabic simple">
+<li>Run history <code class="docutils literal"><span class="pre">python</span> <span class="pre">main.py</span> <span class="pre">H</span></code></li>
+<li>Run random simulation values with new timestamp (now) <code class="docutils literal"><span class="pre">python</span> <span class="pre">main.py</span> <span class="pre">S</span></code></li>
+<li>Create new values in terminal <code class="docutils literal"><span class="pre">python</span> <span class="pre">main.py</span></code></li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, P4-G2.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
